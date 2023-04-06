@@ -1,0 +1,225 @@
+notes from the RUBY 100 book:
+
+Chapter 1: The Basics
+
+puts stands for put s (as in string)
+gets stands for get s (as in string)
+
+remember: all user input comes in as a string. So if you are working with numbers
+  be sure to add .to_i (for integers) or .to_f (for floats) to your gets.chomp
+  EX: number = gets.chomp.to_i
+
+the / divides two numbers, but wont give decimals unless you put 
+  a decimal in the equation ex: if you are dividing two numbers 
+  (15 / 4)(it will give you 3)
+if you want to get the whole answer without a remainder, 
+  use a float. ex: (15.0 / 4)(will give you 3.75)
+  
+the % (modulo) gives the remainder. Ex: (15 % 4)(will give you 3)
+a better example is:
+9357 / 1000 will give you 9, but
+9357 % 1000 wil give you 357
+  
+integers (whole numbers) are represented by i, so i = integer 
+if converting a string to an integer, use .to_i, ex. '45'.to_i 
+
+floats (numbers with decimals) are represented by f, so f = floats
+if converting a string to a float, use .to_f, ex. '45.55'.to_f
+
+  
+.to_s converts integers and floats to strings
+s usually statds for string
+ex:
+puts is short for put string 
+
+a hash is a set of key-value pairs, represented by {}.
+A hash consists of a key, usually represented by a symbol, 
+  that points to a value (denoted using a =>) of any type of data. 
+ex: {:dog => 'barks'}
+aka: {(=hash):(=symbol)dog(=key) =>(=denotation)'barks'(=value)}
+there can be multiples: ex: {:dog => 'barks', :cat => 'meows', :pig => 'oinks'}
+ex: {:dog => 'barks', :cat => 'meows', :pig => 'oinks'}[:dog] 
+  would return "barks"
+  
+An expression is anything that can be evaluated. 
+a ruby expression always returns a value, even if its an error or nil
+
+
+Chapter 2: Variables
+
+When you assign a variable, you use the = symbol. The name of the variable goes 
+on the left and the value you want to store in the variable goes on the right.
+
+there are five types of variables. Constants, global variables, 
+      class variables, instance variables, and local variables. 
+
+
+Remember. The individual = symbol assigns value while 
+  the == symbol checks if two things are equal.
+  
+gets stands for "get string"  Alone, gets will return with \n (carriage return) at the end
+chomp will get rid of the \n. together they are gets.chomp
+
+Blocks:
+A block is a piece of code that follows a method's invocation, 
+delimited by either curly braces {} (used if its one line of code)
+or do/end (used if it is multiple lines of code):
+EX:
+1.upto(4) { |number| puts "Echo#{number}"}
+      or
+1.upto(4) do |number|
+  puts "Echo #{number}" 
+end
+this explained is:
+1.upto(method)(4)(the 4 here is the method parameter) do (starts the block) |number|(block parameter or local variable)
+  puts "Echo #{number}"
+end(finishes the block)
+
+-With blocks, the one rule that we want to emphasize is that: Inner scope can 
+access variables initialized in an outer scope, but not vice versa.
+
+
+Chapter 3: Methods 
+
+use def (short for define) when defining a method. This way you can use it over and over 
+throughout the program. Always finish it with an end.
+ex:
+def say
+  # method body goes here
+end
+-method invocation refers to calling a method.
+-parameters are in () directly following what is difined. 
+ex: 
+def say(words)
+  puts words
+end
+
+say("hello")
+say("hi")
+
+- Parameters are used when you have data outside of a method 
+definition's scope, but you need access to it within the method 
+definition. If the method definition does not need access to any 
+outside data, you do not need to define any parameters.
+
+-Arguments are pieces of information that are sent to a method 
+invocation to be modified or used to return a specific result. 
+We "pass" arguments to a method when we call it. 
+
+
+Chapter 4: control flow
+
+Ruby follows an order of precedence when deciding how to evaluate multiple 
+expressions. The following is a list of operations from highest order of 
+precedence (top) to lowest (bottom).
+
+<=, <, >, >= - Comparison
+==, != - Equality
+&& - Logical AND
+|| - Logical OR
+
+So in this example:
+if x && y || z
+  # do something
+end
+First the x && y statement will be executed. If that statement is true, 
+then the program will execute the # do something code on the next line. 
+If the x && y statement is false, then the z will be evaluated. If the z 
+is true, the code on the next line will be evaluated. If the z is false, 
+then the code will exit the if statement.
+
+Chapter 5 - Loops and Iterators
+
+A while loop is given a parameter that evaluates as either true or false.
+
+The until loop is simply the opposite of the while loop. You can substitute it 
+    in order to phrase the problem in a different way. 
+    
+**As with while loops, until is not a method. Therefore, 
+        until loops do not have their own scope.
+        
+A do/while loop works in a similar way to a while loop; 
+one important difference is that the code within the loop gets executed 
+one time, prior to the conditional check to see if the code should be executed. 
+In a "do/while" loop, the conditional check is placed at the end 
+of the loop as opposed to the beginning.
+
+for loops are used to loop over a collection of elements.
+
+Remember: A block is just some lines of code ready to be executed.
+
+Chapter 6: Arrays 
+
+-"each" and "map" are important methods to know but can be quite confusing 
+in the beginning. Another way to remember these methods: use each for 
+iteration and map for transformation.
+
+-Arrays are an extremely valuable data set. They can be used to store many 
+different kinds of data and you'll see them very often in the wild. Ruby's array 
+class has lots of built-in methods that can be used to perform many of the daily 
+functions that programmers use. 
+
+.product - returns an array of all combinations of elements from all arrays.
+  ex: [1,2,3].product([4,5])     #=> [[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]]
+  another ex: [1,2].product([3,4],[5,6]) #=> [[1,3,5],[1,3,6],[1,4,5],[1,4,6],[2,3,5],[2,3,6],[2,4,5],[2,4,6]]
+  
+  --use .each for iteration and .map for transformation.
+  
+  Chapter 7: Hashes
+  
+  Most commonly, a hash is created using symbols as keys and any data types as values. 
+  All key-value pairs in a hash are surrounded by curly braces {} and comma separated.
+  
+  ex: older_syntax_style = {:name => 'bob}    will => {:name=>'bob}
+  ex: new_syntax_style = {name: 'bob'}        will => {:name=>'bob}
+  
+  Chapter 8: More Stuff 
+  
+--Regex stands for regular expression. A regular expression is a sequence of 
+characters that form pattern matching rules, and is then applied to a string 
+to look for matches.
+
+Remember when working with variables: some operations mutate the address space,
+while others simply make the variable point to a different address space.
+
+Blocks, like parameters, can be passed into a method just like normal variables.
+
+define all your methods before you try to invoke the first one. 
+
+Exception handling is a structure used to handle the possibility 
+of an error occurring in a program. It is a way of handling the error
+by changing the flow of control without exiting the program entirely.
+
+Ruby has an Exception class that makes handling these errors much easier. 
+It also has a syntactic structure using the reserved words 'begin', 'rescue', 
+and 'end' to signify exception handling. The basic structure looks like this:
+begin
+  # perform some dangerous operation
+rescue
+  # do this if operation fails
+  # for example, log the error
+end
+More speciffically:
+names = ['bob', 'joe', 'steve', nil, 'frank']
+
+names.each do |name|
+  begin
+    puts "#{name}'s name has #{name.length} letters in it."
+  rescue
+    puts "Something went wrong!"
+  end
+end
+...will output:
+
+bob's name has 3 letters in it.
+joe's name has 3 letters in it.
+steve's name has 5 letters in it.
+Something went wrong!
+frank's name has 5 letters in it.
+
+When looking on https://docs.ruby-lang.org/:
+documentation for what we like to think of as "the ruby language" can be 
+difficult to find until we know where to look. The "control expressions" 
+page is where you will find discussions of most language features that control 
+code flow: conditionals (if, unless, case), basic looping (while, until, for), 
+loop termination (break, next), and several other features of the language.

@@ -1,0 +1,51 @@
+Notes on cloud 9 commands and CLI's in general 
+
+The following is a list of some of the most common commands used on the command line. The exercises will walk you through how to use each of them.
+
+Command	Description
+cd	Change directory.
+ls	List files and directories in current directory.
+pwd	Display the path of the current directory.
+touch	Create a file.
+mkdir	Create a directory.
+rm file_name  	        -Remove a file or directory. Warning: deleting a file or directory with this command is permanent!
+rm -r directory name    -removes a directory
+cp	Copy a file or directory.
+mv	Move or rename a file or directory.
+echo	Print text to STDOUT.
+cat	Display contents of a file.
+more	Display contents of a file, starting at the top and letting the user scroll down.
+less	Display contents of a file in an even more interactive way.
+head	Display the first part of a file.
+tail	Display the last part of a file.
+man	Display documentation about a command.
+
+
+Let's look for a moment at some of the symbols that will help us navigate the command line:
+
+/ - The root directory or a separator when listing directories
+. - The current directory (also ./) or the same level
+.. - The directory one level up (also ../)
+../.. - The directory that is two levels up; that is, the directory that is one level up from ..
+~ - Your "home" directory, or the directory you are placed in when you log in.
+* - The "splat" or "glob" operator. This is the wildcard of the command line and represents "any characters."
+The above symbols can be combined with directory and file names to represent their locations. 
+
+
+
+Let's briefly review the concepts we discussed in this book.
+
+· The command line is an interface to your computer's files and directories.
+The command line provides a way to communicate with your computer. Its language takes the form of text-based input and output.
+
+· Everything you do in the command line is related to files, directories, and executables.
+When working in the command line, everything is a file, a directory, or an executable (and executables are files). When you run commands such as cd or ls, you are really just executing files.
+
+· Environment variables provide context for what you do in the command line.
+Context for the commands you run is provided by environment variables. Your "current directory" (PWD), the list of directories that defines the location of executables (PATH), and your home directory (HOME) are examples of environment variables that affect the commands you run and your ability to run commands. You can change environment variables on the fly using the VARIABLE="value" pattern, or you can set them more permanently by exporting the variables in your ~/.bashrc (for Bash) or ~/.zshrc (for Zsh) file.
+
+· Access to files, directories, and executables is determined by their read, write, and execute permissions. There are permissions for the file's user (owner), group, and other (everyone else).
+Another important piece of context is the user account you are currently logged in under. Each directory and each file is assigned to a user and a group, and permissions for reading, writing, and executing are granted to the user and group. Permissions are also granted to everyone else ("other"), which includes any user that is not the user or doesn't belong to the file's group.
+
+· Some programs provide a completely new context within the command line interface.
+While the environment variables and your user account provide context for commands that you run while in the command line interface, some commands can temporarily take over handling all input and output. These commands allow users to interact more directly with databases, files, and scripts. They change the display and accept commands that aren't available in the regular command line interface, and commands that are available in the regular CLI aren't available in these other interfaces. Some of these interfaces are called "REPLs" because they Read input, Evaluate the input, Print the results, and Loop back to read more input.
