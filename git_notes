@@ -42,6 +42,7 @@ that would be nesting the sub directories)): mkdir folder_name
 #check ls and the file/program for the changes you made. Also check git log
 
       #### Push to github 
+#(If you already have a repo then skip down to git push -u origin main)
 #Go to github.com and make new repository there
 
 #clone or copy: git remote add url_given_to copy
