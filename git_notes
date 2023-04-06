@@ -62,3 +62,7 @@ that would be nesting the sub directories)): mkdir folder_name
 #then command: git pull --ff-only (#hint-make sure you are in the right branch-usually main)
 
 #then check git log and git status to see the changes
+
+                  *****
+CLONING: if you want to pull an entire repo follow these directions:
+https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
