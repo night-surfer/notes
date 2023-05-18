@@ -1,6 +1,7 @@
 Notes on cloud 9 commands and CLI's in general 
 
-The following is a list of some of the most common commands used on the command line. The exercises will walk you through how to use each of them.
+The following is a list of some of the most common commands used on the command line. 
+The exercises will walk you through how to use each of them.
 
 Command	Description
 cd	Change directory.
@@ -31,7 +32,9 @@ Let's look for a moment at some of the symbols that will help us navigate the co
 * - The "splat" or "glob" operator. This is the wildcard of the command line and represents "any characters."
 The above symbols can be combined with directory and file names to represent their locations. 
 
-
+### If you want to install an older version of ruby, or switch between ruby versions, see:
+  https://launchschool.com/lessons/8a39abff/assignments/bfb01e09 
+  for explanations on how to do so! 
 
 Let's briefly review the concepts we discussed in this book.
 

@@ -8,7 +8,7 @@ that would be nesting the sub directories)): mkdir folder_name
 (again, only do this on sub-directories within Launch_repos)
 
 #Create a README.md, LICENSE.md, & .gitignore
-
+      (remember, you can check what hidden files are in a folder by using ## ls -a ##)
       #### Making changes to files or programs
 #Open and make changes to project files in the text editor
 
@@ -34,6 +34,13 @@ that would be nesting the sub directories)): mkdir folder_name
 
 #if you want to delete a branch, use command: git branch -d name_of_branch (hint: you cant be in that branch when trying to delete it)
 
+
+####git checkout -b development is shorthand for git branch development and 
+git checkout development, it creates a new branch and switches to it in one 
+command instead of having to write both commands out separately.
+      
+      
+      
       #### Merging
 #make sure you are on the right branch (aka: the branch you want to merge into, usually the main branch)
 

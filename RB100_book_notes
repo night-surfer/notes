@@ -106,6 +106,16 @@ outside data, you do not need to define any parameters.
 invocation to be modified or used to return a specific result. 
 We "pass" arguments to a method when we call it. 
 
+-- if you want to leave the option to not use parameters you can 
+accomplish this like this: 
+
+def assign_name(name = "Bob")
+  name 
+end 
+
+puts assign_name('Kevin')       # this will return 'Kevin'
+puts assign_name                # this will return 'Bob', or whatever you put 
+                                  as the base (or backup) parameter.
 
 Chapter 4: control flow
 
@@ -233,6 +243,11 @@ joe's name has 3 letters in it.
 steve's name has 5 letters in it.
 Something went wrong!
 frank's name has 5 letters in it.
+
+This is an example of what a ternary operator can look like:
+  boolean = [true, false].sample
+  puts (boolean ? "I'm true!" : "I'm false!")   #this will output randomly between the two
+
 
 When looking on https://docs.ruby-lang.org/:
 documentation for what we like to think of as "the ruby language" can be 
